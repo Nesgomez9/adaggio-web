@@ -1,0 +1,48 @@
+.NavBar {
+  background-color: #081423;
+}
+.logo-big-text {
+  color: white;
+  font-size: 30px;
+}
+.logo-small-text {
+  font-size: 25px;
+  color: #ec3161;
+}
+.nav-profile-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-right: 15px;
+  border: 2px solid #ec3161;
+  background-color: white;
+}
+.search-input {
+  margin: 5px;
+  -webkit-appearance: none;
+  background-color: #081423;
+  color: white;
+  height: 30px;
+  width: 200px;
+  border: none;
+  outline: none;
+}
+.search-input::placeholder {
+  color: white;
+  opacity: 1;
+}
+.slide-left {
+  -webkit-animation: slide-left 1s ease-in both;
+  animation: slide-left 1s ease-in both;
+}
+.search-container {
+  padding: 0;
+  margin: 0;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-right: 15px;
+  -webkit-animation: scale-in-ver-bottom 0.5s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-ver-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}

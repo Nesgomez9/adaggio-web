@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+$balooFontPath: './assets/fonts/Baloo2/';
+
+@font-face {
+  font-family: 'Baloo2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url($balooFontPath + 'Baloo2-Regular.eot');
+  src: local('Baloo2'), local('Baloo2'),
+    url($balooFontPath + 'Baloo2-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url($balooFontPath + 'Baloo2-Regular.woff2') format('woff2'),
+    url($balooFontPath + 'Baloo2-Regular.woff') format('woff'),
+    url($balooFontPath + 'Baloo2-Regular.ttf') format('truetype'),
+    url($balooFontPath + 'Baloo2-Regular.svg#Roboto') format('svg');
+}
+
+@font-face {
+  font-family: 'Baloo2';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url($balooFontPath + 'Baloo2-Medium.eot');
+  src: local('Baloo2'), local('Baloo2'),
+    url($balooFontPath + 'Baloo2-Medium.eot?#iefix') format('embedded-opentype'),
+    url($balooFontPath + 'Baloo2-Medium.woff2') format('woff2'),
+    url($balooFontPath + 'Baloo2-Medium.woff') format('woff'),
+    url($balooFontPath + 'Baloo2-Medium.ttf') format('truetype'),
+    url($balooFontPath + 'Baloo2-Medium.svg#Roboto') format('svg');
+}
