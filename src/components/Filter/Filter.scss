@@ -1,0 +1,31 @@
+.main__filters {
+  &-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+
+  &-container {
+    width: 95%;
+    display: flex;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ec3161;
+    margin-top: 20px;
+
+    input {
+      margin-top: 3px;
+      margin-right: 10px;
+    }
+  }
+
+  &-filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
