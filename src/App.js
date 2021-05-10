@@ -1,12 +1,22 @@
 import './App.scss';
-import { NavBar } from './components';
-import { Home } from './screens/Home/Home';
+
+import { Home, Expert } from './screens';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { SearchEx } from './screens/SearchEx/SearchEx';
+
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Home />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <div className="App">
+            <Home />
+          </div>
+        </Route>
+        <Route exact path="/expert" component={Expert} />
+        <Route exact path="/search-expert" component={SearchEx} />
+      </Switch>
+    </Router>
   );
 }
 

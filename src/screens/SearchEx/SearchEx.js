@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Filter } from '../../components/Filter/Filter';
 import './SearchEx.scss';
-import { shortid } from 'shortid';
 import {
   Container,
   Row,
@@ -13,6 +12,7 @@ import {
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import { TiArrowUnsorted } from 'react-icons/ti';
 import { BiSearchAlt2 } from 'react-icons/bi';
+import { Footer, NavBar } from '../../components';
 
 export const SearchEx = () => {
   const [showText, setShowText] = useState('Show 10 Results');
@@ -41,6 +41,7 @@ export const SearchEx = () => {
 
   return (
     <>
+      <NavBar />
       <div className="init">
         <div className="init__title">
           <h2>Expertos</h2>
@@ -73,7 +74,7 @@ export const SearchEx = () => {
               ))}
             </div>
           </div>
-          <div className="col-5.5 main__results">
+          <div className="col-7 main__results">
             <div className="main__results-title">
               <div className="main__results-title-main">
                 <div className="main__results-title-main-t">890 Resultados</div>
@@ -390,16 +391,16 @@ export const SearchEx = () => {
                 <div className="featured__first-one-photo"></div>
                 <div className="featured__first-one-text">
                   <div>NameGroupUniversity</div>
-                  <div className="featured__first-one-text-red">Where</div>
+                  <div className="featured__first-one-text-red ">Where</div>
                 </div>
               </div>
-              <div>
+              <div className="center">
                 <div className="featured__first-one-one"></div>
               </div>
-              <div className="featured__first-one-dscrptn">
+              <div className="featured__first-one-dscrptn featured__between">
                 <div className="featured__first-one-prg">
                   <div>FirstL SecondL, FN SN</div>
-                  <div className="featured__first-one-text-red">
+                  <div className="featured__first-one-text-red  ">
                     InvestigationGroup
                   </div>
                 </div>
@@ -411,16 +412,16 @@ export const SearchEx = () => {
                 <div className="featured__first-one-photo"></div>
                 <div className="featured__first-one-text">
                   <div>NameGroupUniversity</div>
-                  <div className="featured__first-one-text-red">Where</div>
+                  <div className="featured__first-one-text-red ">Where</div>
                 </div>
               </div>
-              <div>
+              <div className="center">
                 <div className="featured__first-one-one"></div>
               </div>
-              <div className="featured__first-one-dscrptn">
+              <div className="featured__first-one-dscrptn featured__between">
                 <div className="featured__first-one-prg">
                   <div>FirstL SecondL, FN SN</div>
-                  <div className="featured__first-one-text-red">
+                  <div className="featured__first-one-text-red  ">
                     InvestigationGroup
                   </div>
                 </div>
@@ -432,16 +433,16 @@ export const SearchEx = () => {
                 <div className="featured__first-one-photo"></div>
                 <div className="featured__first-one-text">
                   <div>NameGroupUniversity</div>
-                  <div className="featured__first-one-text-red">Where</div>
+                  <div className="featured__first-one-text-red ">Where</div>
                 </div>
               </div>
-              <div>
+              <div className="center">
                 <div className="featured__first-one-one"></div>
               </div>
-              <div className="featured__first-one-dscrptn">
+              <div className="featured__first-one-dscrptn featured__between">
                 <div className="featured__first-one-prg">
                   <div>FirstL SecondL, FN SN</div>
-                  <div className="featured__first-one-text-red">
+                  <div className="featured__first-one-text-red  ">
                     InvestigationGroup
                   </div>
                 </div>
@@ -453,16 +454,16 @@ export const SearchEx = () => {
                 <div className="featured__first-one-photo"></div>
                 <div className="featured__first-one-text">
                   <div>NameGroupUniversity</div>
-                  <div className="featured__first-one-text-red">Where</div>
+                  <div className="featured__first-one-text-red ">Where</div>
                 </div>
               </div>
-              <div>
+              <div className="center">
                 <div className="featured__first-one-one"></div>
               </div>
-              <div className="featured__first-one-dscrptn">
+              <div className="featured__first-one-dscrptn featured__between">
                 <div className="featured__first-one-prg">
                   <div>FirstL SecondL, FN SN</div>
-                  <div className="featured__first-one-text-red">
+                  <div className="featured__first-one-text-red  ">
                     InvestigationGroup
                   </div>
                 </div>
@@ -485,16 +486,61 @@ export const SearchEx = () => {
                 <div className="featured__first-one-photo"></div>
                 <div className="featured__first-one-text">
                   <div>NameGroupUniversity</div>
-                  <div className="featured__first-one-text-red">Where</div>
+                  <div className="featured__first-one-text-red ">Where</div>
                 </div>
               </div>
-              <div>
+              <div className="center">
                 <div className="featured__first-one-one"></div>
               </div>
+              <div className="featured__first-one-dscrptn featured__between">
+                <div className="featured__first-one-prg">
+                  <div>
+                    FirstL SecondL, FN SN
+                    <div className="featured__first-one-text-red ">
+                      InvestigationGroup1
+                    </div>
+                  </div>
+                </div>
+                <div className="featured__first-one-score">##</div>
+              </div>
+            </div>
+            <div className="featured__first-one">
               <div className="featured__first-one-dscrptn">
+                <div className="featured__first-one-photo"></div>
+                <div className="featured__first-one-text">
+                  <div>NameGroupUniversity</div>
+                  <div className="featured__first-one-text-red ">Where</div>
+                </div>
+              </div>
+              <div className="center">
+                <div className="featured__first-one-one"></div>
+              </div>
+              <div className="featured__first-one-dscrptn featured__between">
                 <div className="featured__first-one-prg">
                   <div>FirstL SecondL, FN SN</div>
-                  <div className="featured__first-one-text-red">
+                  <div className="featured__first-one-text-red  ">
+                    InvestigationGroup
+                  </div>
+                </div>
+                <div className="featured__first-one-score">##</div>
+              </div>
+            </div>
+
+            <div className="featured__first-one">
+              <div className="featured__first-one-dscrptn">
+                <div className="featured__first-one-photo"></div>
+                <div className="featured__first-one-text">
+                  <div>NameGroupUniversity</div>
+                  <div className="featured__first-one-text-red ">Where</div>
+                </div>
+              </div>
+              <div className="center">
+                <div className="featured__first-one-one"></div>
+              </div>
+              <div className="featured__first-one-dscrptn featured__between">
+                <div className="featured__first-one-prg">
+                  <div>FirstL SecondL, FN SN</div>
+                  <div className="featured__first-one-text-red ">
                     InvestigationGroup
                   </div>
                 </div>
@@ -506,58 +552,16 @@ export const SearchEx = () => {
                 <div className="featured__first-one-photo"></div>
                 <div className="featured__first-one-text">
                   <div>NameGroupUniversity</div>
-                  <div className="featured__first-one-text-red">Where</div>
+                  <div className="featured__first-one-text-red ">Where</div>
                 </div>
               </div>
-              <div>
+              <div className="center">
                 <div className="featured__first-one-one"></div>
               </div>
-              <div className="featured__first-one-dscrptn">
+              <div className="featured__first-one-dscrptn featured__between">
                 <div className="featured__first-one-prg">
                   <div>FirstL SecondL, FN SN</div>
-                  <div className="featured__first-one-text-red">
-                    InvestigationGroup
-                  </div>
-                </div>
-                <div className="featured__first-one-score">##</div>
-              </div>
-            </div>
-            <div className="featured__first-one">
-              <div className="featured__first-one-dscrptn">
-                <div className="featured__first-one-photo"></div>
-                <div className="featured__first-one-text">
-                  <div>NameGroupUniversity</div>
-                  <div className="featured__first-one-text-red">Where</div>
-                </div>
-              </div>
-              <div>
-                <div className="featured__first-one-one"></div>
-              </div>
-              <div className="featured__first-one-dscrptn">
-                <div className="featured__first-one-prg">
-                  <div>FirstL SecondL, FN SN</div>
-                  <div className="featured__first-one-text-red">
-                    InvestigationGroup
-                  </div>
-                </div>
-                <div className="featured__first-one-score">##</div>
-              </div>
-            </div>
-            <div className="featured__first-one">
-              <div className="featured__first-one-dscrptn">
-                <div className="featured__first-one-photo"></div>
-                <div className="featured__first-one-text">
-                  <div>NameGroupUniversity</div>
-                  <div className="featured__first-one-text-red">Where</div>
-                </div>
-              </div>
-              <div>
-                <div className="featured__first-one-one"></div>
-              </div>
-              <div className="featured__first-one-dscrptn">
-                <div className="featured__first-one-prg">
-                  <div>FirstL SecondL, FN SN</div>
-                  <div className="featured__first-one-text-red">
+                  <div className="featured__first-one-text-red ">
                     InvestigationGroup
                   </div>
                 </div>
@@ -571,6 +575,7 @@ export const SearchEx = () => {
         </div>
         <div className="featured__blue"></div>
       </div>
+      <Footer />
     </>
   );
 };

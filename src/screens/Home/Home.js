@@ -1,16 +1,23 @@
 import React from 'react';
 import './Home.scss';
-import { Container, Row, Button, Col } from 'react-bootstrap';
+import { Container, Row, Button } from 'react-bootstrap';
 import { BiPlay } from 'react-icons/bi';
 import { FiLink } from 'react-icons/fi';
+import { NavBar } from '../../components';
 import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 import { ImQuotesLeft } from 'react-icons/im';
+import PublMedLogo from '../../assets/logos/PubMed-logo.png';
+import MicrosoftLogo from '../../assets/logos/microsoft-logo.png';
+import OrcidLogo from '../../assets/logos/orcid-logo.png';
+import { Footer } from '../../components/Footer/Footer';
 export const Home = () => {
   return (
     <>
+      <NavBar />
       <Container fluid className="first-container">
+        <div className="image-background"></div>
         <div className="row first-container-div">
-          <div className="col-4 offset-1 first-container-text">
+          <div className="col-4 offset-1 first-container-text ">
             <span className="color-white first-word">ADAGGIO </span>
             <span className="color-red second-word"> unite</span>
             <p className="color-white info-first-container">
@@ -31,7 +38,7 @@ export const Home = () => {
           </div>
         </div>
       </Container>
-      <Container fluid>
+      <Container fluid className="second-container">
         <div className="row">
           <div className="col-3 offset-1">
             <p className="info-second-container">
@@ -378,7 +385,7 @@ export const Home = () => {
                       </div>
                     </Row>
                   </div>
-                  <div className=" offset-2 col-4 button-div">
+                  <div className="offset-2 col-4 button-div ">
                     <Button className="first-button-info margin-top">
                       Quiero ser parte
                     </Button>
@@ -387,16 +394,118 @@ export const Home = () => {
               </div>
 
               <div className="col-6">
-                <div className="col-6">
-                  <p className="color-white mt-4 big-text">
-                    <span className="bold ">Mapeamos y combinamos datos </span>
-                    de las principales fuentes académicas y científicas
-                  </p>
-                </div>
+                <Row>
+                  <div className="col-6 ">
+                    <p className="color-white mt-4 big-text">
+                      <span className="bold ">Mapeamos y combinamos datos</span>
+                      de las principales fuentes académicas y científicas
+                    </p>
+                    <Row className="mt-5">
+                      <div className="col mb-4 mr-5">
+                        <img src={PublMedLogo} height="50" alt="" />
+                      </div>
+                      <div className="col color-white big-text">GrupoLac</div>
+                      <div className="col mr-4 mt-2">
+                        <img src={MicrosoftLogo} height="40" alt="" />
+                      </div>
+                      <div className="col color-white big-text mt-2">CvLac</div>
+                      <div className="col mr-4 mt-5">
+                        <img src={OrcidLogo} height="40" alt="" />
+                      </div>
+                    </Row>
+                  </div>
+                  <div className="col-3 offset-1 mt-4">
+                    <Button className="second-button-info network-button">
+                      <FiLink className="mr-2" />
+                      Networking
+                    </Button>
+                  </div>
+                </Row>
               </div>
             </Row>
           </div>
         </Row>
+        <Row className="center">
+          <div className="sixth-div pl-4 mt-5">
+            <h5 className=" mt-5 ml-3">BENEFICIO PARA LAS INSTITUCIONES</h5>
+
+            <Row>
+              <div className="fingerprint mt-4"></div>
+              <p className=" info-profits ml-3">
+                <span className="bold ">Visibilidad y posicionamiento</span>
+                <br />
+                Expertos e instituciones relacionadas a la producción cientifica
+                y acádemica.
+              </p>
+            </Row>
+            <Row>
+              <div className="fingerprint mt-4"></div>
+              <p className=" info-profits ml-3">
+                <span className="bold ">Trazabilidad</span>
+                <br />
+                Fácil medición y analisis de las actividades de I+D+i, así como
+                el acceso a datos comparativos para toma de decisiones.
+              </p>
+            </Row>
+            <Row>
+              <div className="fingerprint mt-4"></div>
+              <p className=" info-profits ml-3">
+                <span className="bold ">Unificación y relacionamiento</span>
+                <br />
+                Entre los perfiles de los expertos, las fuentes de finanaciación
+                y los productos resultantes del proceso de I+D+i
+              </p>
+            </Row>
+            <Row>
+              <div className="fingerprint mt-4"></div>
+              <p className=" info-profits ml-3">
+                <span className="bold ">Conexión</span>
+                <br />
+                De la producción intelectual a los ecosistemas de gestion de la
+                investigacióna nivel mundial. Permitiendo la identificación de
+                sinergias y co-creación de nuevos proyectos.
+              </p>
+            </Row>
+            <h5 className=" mt-5 ml-3">BENEFICIO PARA LAS INSTITUCIONES</h5>
+            <Row>
+              <div className="fingerprint mt-4"></div>
+              <p className=" info-profits ml-3">
+                <span className="bold ">Descubra</span>
+                <br />
+                La diversidad en recursos de investigación que ha creado a lo
+                largo del tiempo en su institución.
+              </p>
+            </Row>
+            <Row>
+              <div className="fingerprint mt-4"></div>
+              <p className=" info-profits ml-3">
+                <span className="bold ">Conecte</span>
+                <br />
+                Con sus colegas y pares en áreas puntuales de conocimiento e
+                investigación, encuentre sinergias y sume esfuerzos.
+              </p>
+            </Row>
+            <Row>
+              <div className="fingerprint mt-4"></div>
+              <p className=" info-profits ml-3">
+                <span className="bold ">Comparta</span>
+                <br />
+                Los resultados de investigación y producción intelectual de su
+                institución con el mundo.
+              </p>
+            </Row>
+            <Row>
+              <div className="fingerprint mt-4"></div>
+              <p className=" info-profits ml-3">
+                <span className="bold ">Proyecte</span>
+                <br />
+                Nuevos productos de conocimiento a partir de la base de
+                resultados de investigación identificado e indexado
+              </p>
+            </Row>
+          </div>
+        </Row>
+        <Footer />
       </Container>
     </>
   );
