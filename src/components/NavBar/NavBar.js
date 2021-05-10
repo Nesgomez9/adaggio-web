@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import logo from '../../assets/icons/logo.png';
 import { Navbar, Nav } from 'react-bootstrap';
-import './NavBar.scss';
 import { CgMenuGridR } from 'react-icons/cg';
 import { BiSearchAlt2 } from 'react-icons/bi';
+import logo from '../../assets/icons/logo.png';
+import './NavBar.scss';
+
 export const NavBar = () => {
   const [activeSearch, setActiveSearch] = useState(false);
 

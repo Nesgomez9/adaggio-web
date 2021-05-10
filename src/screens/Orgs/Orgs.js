@@ -6,6 +6,7 @@ import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import { TiArrowUnsorted } from 'react-icons/ti';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import { RiMedal2Fill } from 'react-icons/ri';
+import { Footer, NavBar } from '../../components';
 
 export const Orgs = () => {
   const [showText, setShowText] = useState('Show 10 Results');
@@ -49,6 +50,7 @@ export const Orgs = () => {
 
   return (
     <>
+      <NavBar />
       <div className="init">
         <div className="init_title">
           <div className="init_title_main">Organizaciones</div>
@@ -426,6 +428,7 @@ export const Orgs = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
