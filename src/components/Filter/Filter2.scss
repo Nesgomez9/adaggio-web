@@ -1,0 +1,42 @@
+.main_filters {
+  &_btn {
+    display: flex;
+    height: 35px;
+    justify-content: space-between;
+    border: 2px solid #eff1f3;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 12px;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    color: #061320;
+  }
+
+  &_sign {
+    color: #ec3161;
+  }
+
+  &_container {
+    width: 100%;
+    display: flex;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ec3161;
+    margin-top: 12px;
+
+    input {
+      margin-top: 3px;
+      margin-right: 10px;
+    }
+  }
+
+  &_filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
