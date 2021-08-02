@@ -1,5 +1,5 @@
 import './App.scss';
-import { Home, Expert, SearchEx, Orgs } from './screens';
+import { Home, Expert, SearchEx, Orgs, Load } from './screens';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         <Route exact path="/expert" component={Expert} />
         <Route exact path="/search-expert" component={SearchEx} />
         <Route exact path="/search-organizations" component={Orgs} />
+        <Route exact path="/load" component={Load} />
       </Switch>
     </Router>
   );

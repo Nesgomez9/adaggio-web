@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { CgMenuGridR } from 'react-icons/cg';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import logo from '../../assets/icons/logo.png';
@@ -27,6 +28,9 @@ export const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Link to="/load" style={{ textDecoration: 'none' }}>
+            <div className="load-btn">Cargar Datos</div>
+          </Link>
           {activeSearch ? (
             <div className="search-container slide-left">
               <BiSearchAlt2 size={35} className="white ml-2 cursor-pointer" />
