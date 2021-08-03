@@ -79,7 +79,7 @@ export const Orgs = () => {
               ))}
             </div>
           </div>
-          <div className="col-5.5 main_results">
+          <div className="col-6 main_results">
             <div className="main_results_top">
               <div>
                 <div className="main_results_top_title">890 Resultados</div>
@@ -224,7 +224,7 @@ export const Orgs = () => {
               </div>
             </div>
           </div>
-          <div className="main_data">
+          <div className="main_data col-3">
             <div className="main_data_title">
               Cifras Asociadas a la Selección
             </div>

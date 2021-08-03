@@ -2,34 +2,50 @@
   position: relative;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 99.2%;
   .footer-first-div {
-    background-color: #ffffff;
     text-align: left;
-    padding-top: 20px;
     padding-left: 100px;
+    background-color: white;
     .medium-text {
       font-size: 18px;
     }
     .social-media {
-      margin-left: 55vw;
+      margin-left: 45vw;
       border: none;
     }
     .social-media-container {
-      margin-right: 15px;
       height: 50px;
       width: 50px;
       border: 4px black solid;
       padding-top: 5px;
       padding-left: 6px;
       border-radius: 25px;
-      margin-bottom: 40px;
+    }
+    .copyright {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-weight: bold;
+      margin-left: 70px;
     }
   }
   .footer-second-div {
+    width: 100%;
     text-align: left;
-    margin-left: 5vw;
+    padding-left: 80px;
     margin-top: 30px;
+    padding-top: 30px;
     padding-bottom: 30px;
+    background-color: #f5f8fa;
   }
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

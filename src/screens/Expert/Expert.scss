@@ -51,6 +51,9 @@
     position: absolute;
     right: 50px;
   }
+  .selected {
+    border-bottom: 3px solid #ec3161;
+  }
 }
 .expert-body {
   background-color: #f5f8fa;

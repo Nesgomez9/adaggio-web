@@ -1,0 +1,29 @@
+.asociations {
+  background-color: white;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 80px;
+  margin-left: 60px;
+  border: 1px solid rgb(235, 235, 235);
+  .asociation {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .contact-info {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    display: inline-block;
+  }
+  .logo {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 20px;
+    display: inline-block;
+  }
+  .see-more {
+    float: right;
+    margin-right: 30px;
+  }
+}

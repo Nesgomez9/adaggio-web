@@ -1,0 +1,19 @@
+.affiliation-card {
+  border: 1px solid rgb(194, 194, 194);
+  background-color: #f5f8fa;
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  .icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-right: 15px;
+  }
+  .tiny-text {
+    font-size: 0.8rem;
+  }
+}

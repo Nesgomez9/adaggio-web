@@ -7,8 +7,7 @@ import {
   FaLinkedinIn,
 } from 'react-icons/fa';
 import './Footer.scss';
-import logo from '../../assets/icons/logo.png';
-import logoRenata from '../../assets/logos/renata-logo.png';
+import logo from '../../assets/logos/ADAGGIO-footer.png';
 export const Footer = () => {
   return (
     <>
@@ -16,43 +15,56 @@ export const Footer = () => {
         <div className="footer-first-div">
           <Row>
             <div className="mr-3">
-              <p className="color-red medium-text mb-2">Protegido por </p>
               <Row>
                 <img
                   src={logo}
-                  height="40"
+                  height="60"
                   alt="Nav-logo"
-                  className="mr-2 ml-4"
-                />
-                <div className="mt-1">
-                  <span className="big-text">ADAGGIO</span>
-                </div>
-              </Row>
-            </div>
-            <div className="ml-5">
-              <p className="color-red medium-text mb-2">En alianza con </p>
-              <Row>
-                <img
-                  src={logoRenata}
-                  height="40"
-                  alt="Nav-logo"
-                  className="mr-2 ml-4"
+                  className="mr-2 ml-4 mt-4"
                 />
               </Row>
+              <p className="copyright">
+                Copyright © ADAGGIO 2019 - TODOS LOS DERECHOS RESERVADOS
+              </p>
             </div>
 
             <Row className="mt-4 social-media">
               <div className="social-media-container">
-                <FaFacebookF size={30} />
+                <a
+                  href="https://www.facebook.com/ADAGGIOne/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaFacebookF size={30} />
+                </a>
+              </div>
+
+              <div className="social-media-container">
+                <a
+                  href="https://www.youtube.com/channel/UC91hqe16t0-lVEZ7d-zsE3A?view_as=subscriber"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaYoutube size={30} />
+                </a>
               </div>
               <div className="social-media-container">
-                <FaYoutube size={30} />
+                <a
+                  href="https://api.whatsapp.com/send?phone=3053652223&text=Adaggio"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaWhatsapp size={30} />
+                </a>
               </div>
               <div className="social-media-container">
-                <FaWhatsapp size={30} />
-              </div>
-              <div className="social-media-container">
-                <FaLinkedinIn size={30} />
+                <a
+                  href="https://www.linkedin.com/company/adaggio-unite/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaLinkedinIn size={30} />
+                </a>
               </div>
             </Row>
           </Row>
