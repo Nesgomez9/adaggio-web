@@ -7,6 +7,7 @@ import {
   NavBar,
   ProductsExpert,
 } from '../../components';
+import { useParams } from 'react-router-dom';
 import { Container, Row, Button, Form } from 'react-bootstrap';
 import { BiLike, BiComment, BiShareAlt, BiPlus } from 'react-icons/bi';
 import { FiLink } from 'react-icons/fi';
@@ -16,7 +17,9 @@ import { ExpertRepository } from '../../repositories';
 import './Expert.scss';
 
 export const Expert = (data) => {
-  const id = data.location.state.data;
+  console.log(data);
+  let { expertId } = useParams();
+  const id = expertId ? expertId : data?.location.state.data;
   const [loading, setLoading] = useState(true);
   const [menus, setMenus] = useState([true, false, false, false, false, false]);
   const [expertData, setExpertData] = useState({});
@@ -25,6 +28,7 @@ export const Expert = (data) => {
   const [educations, setEducations] = useState({});
   const [lines, setLines] = useState({});
   const [areas, setAreas] = useState({});
+
   const fetchExpert = async () => {
     const response = await ExpertRepository.getExpertById(id);
     setExpertData(response);

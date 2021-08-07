@@ -6,7 +6,7 @@ export const ProductCard = ({ product, setProductInformation }) => {
   return (
     <div className="product">
       <div onClick={() => setProductInformation(product)}>
-        <p className="title">{product.title}</p>
+        <span className="title cursor-pointer">{product.title}</span>
         <div className="options">
           <div className="option ml-5">Comentarios</div>
           <div className="option">Compartir</div>

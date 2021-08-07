@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { Footer, NavBar } from '../../components';
 import { Form } from 'react-bootstrap';
 import './Load.scss';
+import { ExpertRepository } from '../../repositories';
 export const Load = () => {
   const [csvArray, setCsvArray] = useState([]);
 
