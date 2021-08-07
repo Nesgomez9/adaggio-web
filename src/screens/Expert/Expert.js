@@ -9,7 +9,7 @@ import {
   NavBar,
   SocialMedia,
 } from '../../components';
-import { Container, Row, Button } from 'react-bootstrap';
+import { Container, Row, Button, Form } from 'react-bootstrap';
 import { BiLike, BiComment, BiShareAlt, BiPlus } from 'react-icons/bi';
 import { FiLink } from 'react-icons/fi';
 import { HiQrcode } from 'react-icons/hi';
