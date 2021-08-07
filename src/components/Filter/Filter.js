@@ -8,10 +8,6 @@ export const Filter = ({ name, opts }) => {
   const chDropList = () => {
     setDropList(!dropList);
   };
-
-  console.log(name);
-  console.log(opts);
-
   return (
     <>
       {dropList ? (

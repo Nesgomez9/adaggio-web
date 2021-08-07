@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Axios from 'axios';
 import { Footer, NavBar } from '../../components';
-import { Button, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import './Load.scss';
 export const Load = () => {
   const [csvArray, setCsvArray] = useState([]);

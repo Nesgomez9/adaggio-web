@@ -1,0 +1,40 @@
+.profile-organization {
+  background-color: #212c39;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  display: flex;
+  .profile-picture {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    margin-left: 200px;
+    border: 2px solid #ec3161;
+    display: inline-block;
+  }
+  .profile-name {
+    color: white;
+    width: 700px;
+    margin-left: 50px;
+    display: inline-block;
+    .name {
+      font-weight: bold;
+      font-size: 25px;
+    }
+  }
+  .social-interactions {
+    margin-top: 250px;
+    color: white;
+    position: absolute;
+    right: 0px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+    margin-right: 50px;
+    .column-follow {
+      background-color: #8c9298;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 20px;
+    }
+  }
+}

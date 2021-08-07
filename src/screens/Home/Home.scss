@@ -99,10 +99,9 @@
 }
 .expert-card {
   display: grid;
-
   text-align: center;
   width: 210px;
-  height: 280px;
+  padding-bottom: 20px;
   border: 1px solid black;
   margin-left: 20px;
   margin-right: 20px;
@@ -120,7 +119,6 @@
   border-radius: 80px;
   margin-bottom: 10px;
   border: 1px solid #ec3161;
-  margin-left: 25px;
 }
 .universities {
   background-color: white;
@@ -139,7 +137,7 @@
     border: 1px solid rgb(194, 194, 194);
     background-color: #f5f8fa;
     display: flex;
-    justify-content: center;
+    padding-left: 30px;
     align-items: center;
     margin-left: 80px;
     height: 70px;
@@ -149,7 +147,6 @@
     height: 40px;
     width: 40px;
     border-radius: 20px;
-    background-color: black;
     margin-right: 15px;
   }
 }
@@ -260,4 +257,11 @@
     height: 120px;
     margin-left: 35px;
   }
+}
+.background-net {
+  background-image: url('../../assets/imgs/red.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-color: white;
+  background-size: 70% 100%;
 }

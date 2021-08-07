@@ -1,6 +1,6 @@
 .NavBar {
   background-color: #081423;
-  height: 3.8rem;
+  height: 4rem;
 }
 .logo-big-text {
   color: white;
@@ -46,6 +46,16 @@
   -webkit-animation: scale-in-ver-bottom 0.5s
     cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: scale-in-ver-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.singup-button {
+  background-color: #ec3161;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 10px;
 }
 .load-btn {
   background-color: transparent;
