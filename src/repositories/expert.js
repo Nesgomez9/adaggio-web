@@ -50,6 +50,13 @@ const getFirstExpertsByLikes = async () => {
     await axios.get(process.env.REACT_APP_API_URL + `/experts/first-five`)
   ).data;
 };
+const postExpertsBulk = async (array) => {
+  const response = await axios.post(
+    process.env.REACT_APP_API_URL + `/experts_bulk`,
+    { array }
+  );
+  return response.data;
+};
 
 export default {
   getFirstExpertsByLikes,
@@ -60,4 +67,5 @@ export default {
   getExpertEducationsById,
   getExpertExperienceById,
   getExpertProductsById,
+  postExpertsBulk,
 };
