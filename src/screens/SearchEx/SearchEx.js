@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import { Filter } from '../../components/Filter/Filter';
 import './SearchEx.scss';
-import {
-  Container,
-  Row,
-  Button,
-  Pagination,
-  Dropdown,
-  ButtonGroup,
-} from 'react-bootstrap';
+import { Container, Row, Button } from 'react-bootstrap';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import { TiArrowUnsorted } from 'react-icons/ti';
 import { BiSearchAlt2 } from 'react-icons/bi';

@@ -8,9 +8,17 @@ export const ExperienceCard = ({ education }) => {
     <Row className="mt-2 experience-card  ">
       <div className="ml-4">
         {education.organization.image_url ? (
-          <img src={education.organization.image_url} className="logo"></img>
+          <img
+            alt="Organization Profile"
+            src={education.organization.image_url}
+            className="logo"
+          ></img>
         ) : (
-          <img src={BlackMarkIcon} className="logo"></img>
+          <img
+            alt="Organization Profile not defined"
+            src={BlackMarkIcon}
+            className="logo"
+          ></img>
         )}
       </div>
       <div className="col-3 bold ">{education.organization.name}</div>

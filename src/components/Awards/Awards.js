@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './Awards.scss';
-import { BiWorld, BiEnvelope, BiPhone } from 'react-icons/bi';
 import ColCiencias from '../../assets/icons/social-networks/colciencias.png';
 export const Awards = ({ awards, type }) => {
   const changeDates = async () => {
@@ -24,7 +23,7 @@ export const Awards = ({ awards, type }) => {
           )}
         </div>
         {awards.map((award) => (
-          <div>
+          <div key={award?.id}>
             {type === 1 ? (
               <div className=" pl-2 mr-3 awards">
                 <div className="contact-info">
@@ -35,7 +34,7 @@ export const Awards = ({ awards, type }) => {
               </div>
             ) : (
               <div className="awards">
-                <img src={ColCiencias} className="logo"></img>
+                <img atl="ColCiencias" src={ColCiencias} className="logo"></img>
                 <div className="contact-info ">
                   {award.award_type.name} <br />
                   conferred by Minciencias, {award.start_date} -{' '}

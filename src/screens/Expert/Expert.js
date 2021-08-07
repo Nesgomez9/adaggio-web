@@ -75,9 +75,17 @@ export const Expert = (data) => {
           <NavBar />
           <div className="profile">
             {expertData.image_url ? (
-              <img src={expertData.image_url} className="profile-picture" />
+              <img
+                alt="Expert Profile"
+                src={expertData.image_url}
+                className="profile-picture"
+              />
             ) : (
-              <img src={BlackMarkIcon} className="profile-picture" />
+              <img
+                alt="Expert Profile not defined"
+                src={BlackMarkIcon}
+                className="profile-picture"
+              />
             )}
 
             <p className="profile-name">

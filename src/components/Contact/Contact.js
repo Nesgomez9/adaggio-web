@@ -37,24 +37,27 @@ export const Contact = ({
           {site ? (
             <div className="mb-4">
               <FaHome size={40} className="mr-3" />
-              <a href={site} target="_blank">
+              <a href={site} target="_blank" rel="noreferrer">
                 Sitio de la universidad
               </a>
             </div>
           ) : null}
           {minCienciasSite ? (
             <div className="mb-4">
-              <img src={ColCiencias} className="col-ciencias mr-3"></img>
-              <a href={minCienciasSite} target="_blank">
-                {' '}
+              <img
+                alt="ColCiencias"
+                src={ColCiencias}
+                className="col-ciencias mr-3"
+              ></img>
+              <a href={minCienciasSite} target="_blank" rel="noreferrer">
                 Perfil de minciencias{' '}
               </a>
             </div>
           ) : null}
           {adaggio ? (
             <div className="mb-4">
-              <img src={logo} className="col-ciencias mr-3"></img>
-              <a href={adaggio} target="_blank">
+              <img alt="Adaggio" src={logo} className="col-ciencias mr-3"></img>
+              <a href={adaggio} target="_blank" rel="noreferrer">
                 {' '}
                 Adaggio unite{' '}
               </a>
@@ -63,7 +66,7 @@ export const Contact = ({
           {editorial ? (
             <div className="mb-4">
               <ImBooks size={40} className="mr-3" />
-              <a href={editorial} target="_blank">
+              <a href={editorial} target="_blank" rel="noreferrer">
                 {' '}
                 Gestion editorial de revistas{' '}
               </a>
@@ -72,7 +75,7 @@ export const Contact = ({
           {repository ? (
             <div className="mb-4">
               <RiGitRepositoryFill size={40} className="mr-3" />
-              <a href={repository} target="_blank">
+              <a href={repository} target="_blank" rel="noreferrer">
                 Repositorio digital intitucional{' '}
               </a>
             </div>
@@ -80,7 +83,7 @@ export const Contact = ({
           {library ? (
             <div className="mb-4">
               <ImLibrary size={40} className="mr-3" />
-              <a href={library} target="_blank">
+              <a href={library} target="_blank" rel="noreferrer">
                 {' '}
                 Biblioteca digital{' '}
               </a>

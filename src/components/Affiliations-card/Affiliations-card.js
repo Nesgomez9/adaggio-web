@@ -8,14 +8,15 @@ export const AffiliationsCard = ({ object }) => {
   const routeChange = (id) => {
     history.push(`/experts/${id}`);
   };
-  const changeDates = async () => {
-    let date = object.start_date.split('-');
-    delete object.start_date;
-    object.start_date = date[0];
-  };
+
   useEffect(() => {
+    const changeDates = () => {
+      let date = object.start_date.split('-');
+      delete object.start_date;
+      object.start_date = date[0];
+    };
     changeDates();
-  }, []);
+  });
   return (
     <div
       className="affiliation-card cursor-pointer"
@@ -23,9 +24,13 @@ export const AffiliationsCard = ({ object }) => {
     >
       <div>
         {object.expert.image_url ? (
-          <img src={object.expert.image_url} className="icon" />
+          <img alt="Profile" src={object.expert.image_url} className="icon" />
         ) : (
-          <img src={BlackMarkIcon} className="icon" />
+          <img
+            alt="Profile  not defined"
+            src={BlackMarkIcon}
+            className="icon"
+          />
         )}
       </div>
       <span>

@@ -95,11 +95,13 @@ export const Home = () => {
                       <div>
                         {expert.image_url ? (
                           <img
+                            alt="Expert Profile"
                             src={expert.image_url}
                             className="img-expert-card"
                           />
                         ) : (
                           <img
+                            alt="Expert Profile not defined"
                             src={BlackMarkIcon}
                             className="img-expert-card"
                           />
@@ -142,11 +144,13 @@ export const Home = () => {
                       <div>
                         {organization.image_url ? (
                           <img
+                            alt="Organiaztion Profile"
                             src={organization.image_url}
                             className="university-icon"
                           />
                         ) : (
                           <img
+                            alt="Organiaztion Profile not defined"
                             src={BlackMarkIcon}
                             className="university-icon"
                           />

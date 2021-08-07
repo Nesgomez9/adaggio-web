@@ -16,7 +16,7 @@ export const Education = ({ tittle, educations }) => {
       <hr />
       <Row className="">
         {educations.map((education) => (
-          <EducationCard education={education} />
+          <EducationCard key={education?.id} education={education} />
         ))}
       </Row>
 

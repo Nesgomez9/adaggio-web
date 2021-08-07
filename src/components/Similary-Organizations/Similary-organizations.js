@@ -22,11 +22,16 @@ export const SimilaryOrganizations = ({ tittle, organizations }) => {
               <div>
                 {organization.image_url ? (
                   <img
+                    alt="University"
                     src={organization.image_url}
                     className="university-icon"
                   />
                 ) : (
-                  <img src={BlackMarkIcon} className="university-icon" />
+                  <img
+                    alt="University not defined"
+                    src={BlackMarkIcon}
+                    className="university-icon"
+                  />
                 )}
               </div>
               <span>

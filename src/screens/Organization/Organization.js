@@ -47,11 +47,16 @@ export const Organization = () => {
           <div className="profile-organization">
             {organizationData.image_url ? (
               <img
+                alt="Organiaztion Profile"
                 src={organizationData.image_url}
                 className="profile-picture"
               />
             ) : (
-              <img src={BlackMarkIcon} className="profile-picture" />
+              <img
+                alt="Organiaztion Profile not defined"
+                src={BlackMarkIcon}
+                className="profile-picture"
+              />
             )}
 
             <p className="profile-name">

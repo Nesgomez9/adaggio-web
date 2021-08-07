@@ -9,7 +9,10 @@ export const PrincipalInformation = ({ tittle, subjects }) => {
       <Row className="ml-1">
         {subjects
           ? subjects.map((subject) => (
-              <InformationCard tittle={subject.subject.name} />
+              <InformationCard
+                key={subject?.id}
+                tittle={subject.subject.name}
+              />
             ))
           : null}
       </Row>

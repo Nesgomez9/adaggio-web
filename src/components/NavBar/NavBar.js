@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { CgMenuGridR } from 'react-icons/cg';
 import { useHistory } from 'react-router-dom';
 import { BiSearchAlt2 } from 'react-icons/bi';
@@ -35,6 +36,9 @@ export const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Link to="/load" style={{ textDecoration: 'none' }}>
+            <div className="load-btn">Cargar Datos</div>
+          </Link>
           {activeSearch ? (
             <div className="search-container slide-left">
               <BiSearchAlt2 size={35} className="white ml-2 cursor-pointer" />

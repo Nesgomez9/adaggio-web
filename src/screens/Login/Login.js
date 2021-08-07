@@ -5,7 +5,7 @@ import * as FaIcons from 'react-icons/fa';
 import { NavBar, Footer } from '../../components';
 import * as ImIcons from 'react-icons/im';
 import { Redirect } from 'react-router-dom';
-import { Form, Button, InputGroup, Container, Row } from 'react-bootstrap';
+import { Form, Button, InputGroup, Row } from 'react-bootstrap';
 import logo from '../../assets/icons/ADAGGIO-red.png';
 import './Login.scss';
 export const Login = () => {
@@ -14,7 +14,6 @@ export const Login = () => {
   const [validated, setValidated] = useState(false);
   const [loged, setLoged] = useState(false);
   const [seePassword, setSeePassword] = useState(false);
-  const [loading, setLoading] = useState(true);
   const Password = () => {
     setSeePassword(!seePassword);
   };

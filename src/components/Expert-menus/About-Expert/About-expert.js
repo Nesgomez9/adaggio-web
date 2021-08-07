@@ -8,7 +8,7 @@ import {
   SocialMedia,
   PrincipalInformation,
 } from '../../../components';
-import { Container, Row, Button } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 export const AboutExpert = ({
   expertData,
   socialNetworks,

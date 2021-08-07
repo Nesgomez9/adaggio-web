@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
 import './Asociations.scss';
 export const Asociations = () => {
   return (

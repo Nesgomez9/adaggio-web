@@ -13,11 +13,12 @@ export const SocialMedia = ({ networks }) => {
               ? networks.map((network) => (
                   <div className="mr-4 ml-3 mb-4">
                     <img
+                      alt="Social Networks"
                       src={network.social_network.image_url}
                       height="40"
                       className="mr-2 "
                     />
-                    <a target="_blank" href={network.url}>
+                    <a target="_blank" rel="noreferrer" href={network.url}>
                       {network.social_network.name}
                     </a>
                   </div>

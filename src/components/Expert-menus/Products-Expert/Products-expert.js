@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CoAuthors, Products, ProductCard } from '../../../components';
+import { CoAuthors, Products, ProductInformation } from '../../../components';
 import { Container, Row } from 'react-bootstrap';
 import { ProductRepository } from '../../../repositories';
 
@@ -27,11 +27,7 @@ export const ProductsExpert = ({ expertData }) => {
               <div className="col-3"></div>
               <div className="col-6">
                 {productInformation ? (
-                  <ProductCard
-                    product={null}
-                    setProductInformation={setProductInformation}
-                    productInformation={productInformation}
-                  />
+                  <ProductInformation productInformation={productInformation} />
                 ) : (
                   productTypes.map((type) => (
                     <Products
