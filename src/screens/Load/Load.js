@@ -25,8 +25,11 @@ export const Load = () => {
     const reader = new FileReader();
     reader.onload = (evt) => {
       const text = evt.target.result;
-      const headers = text.slice(0, text.indexOf('\n')).split(',');
-      const rows = text.slice(text.indexOf('\n') + 1).split('\n');
+      console.log(evt.target.result);
+      const headers = text.slice(0, text.indexOf('\r')).split(',');
+      console.log(headers);
+      const rows = text.slice(text.indexOf('\n') + 1).split('\r\n');
+      console.log(rows);
       const newArray = rows.map((row) => {
         const values = row.split(',');
         const eachObject = headers.reduce((obj, header, i) => {
@@ -41,14 +44,13 @@ export const Load = () => {
     reader.readAsText(file);
   };
 
-  const makeRequest = () => {
-    Axios.get('http://127.0.0.1:8080/api/experts')
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+  const makeRequest = async () => {
+    try {
+      const response = await ExpertRepository.postExpertsBulk(csvArray);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
