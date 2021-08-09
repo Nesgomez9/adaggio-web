@@ -6,33 +6,29 @@ import './Load.scss';
 import { ExpertRepository } from '../../repositories';
 export const Load = () => {
   const [csvArray, setCsvArray] = useState([]);
+  const [sendState, setSendState] = useState(false);
 
-  // const inputFile = useRef(null);
-
-  // const onButtonClick = () => {
-  //   inputFile.current.click();
-  // };
-
-  // const saveImg = (e) => {
-  //   const excelFile = inputFile.current.files[0];
-  //   const reader = new FileReader();
-  //   reader.onload = (e) => {
-  //     console.log(e.target.result);
-  //   };
-  // };
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onload = (evt) => {
       const text = evt.target.result;
-      console.log(evt.target.result);
       const headers = text.slice(0, text.indexOf('\r')).split(',');
-      console.log(headers);
       const rows = text.slice(text.indexOf('\n') + 1).split('\r\n');
-      console.log(rows);
       const newArray = rows.map((row) => {
         const values = row.split(',');
         const eachObject = headers.reduce((obj, header, i) => {
+          if (values[i] === '') {
+            values[i] = null;
+          } else if (
+            Number(values[i]) &&
+            header != 'cvlac_id' &&
+            header != 'likes' &&
+            header != 'phone' &&
+            header != 'document_number'
+          ) {
+            values[i] = Number(values[i]);
+          }
           obj[header] = values[i];
           return obj;
         }, {});
@@ -46,7 +42,9 @@ export const Load = () => {
 
   const makeRequest = async () => {
     try {
+      setSendState(true);
       const response = await ExpertRepository.postExpertsBulk(csvArray);
+      setSendState(false);
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -61,39 +59,36 @@ export const Load = () => {
           <div className="load-title">Cargar Datos</div>
         </div>
         <div className="load-flex">
-          <div className="load-form">
-            <Form>
-              <Form.Check type="radio" label="Expertos" name="group1" />
-              <Form.Check type="radio" label="Organizaciones" name="group1" />
-              <Form.Check type="radio" label="Productos" name="group1" />
-              <Form.Check type="radio" label="Temas" name="group1" />
-              <Form.Check type="radio" label="Macro-Productos" name="group1" />
-            </Form>
-            <div className="load-flex">
-              {/* <label>
+          {!sendState ? (
+            <div className="load-form">
+              <Form>
+                <Form.Check type="radio" label="Expertos" name="group1" />
+                <Form.Check type="radio" label="Organizaciones" name="group1" />
+                <Form.Check type="radio" label="Productos" name="group1" />
+                <Form.Check type="radio" label="Temas" name="group1" />
+                <Form.Check
+                  type="radio"
+                  label="Macro-Productos"
+                  name="group1"
+                />
+              </Form>
+              <div className="load-flex">
                 <input
                   type="file"
+                  accept=".csv"
                   className="load-flex-upload"
-                  id="file-input"
-                  ref={inputFile}
-                  style={{ display: 'none' }}
-                  onChange={saveImg}
+                  onChange={handleFileUpload}
                 />
-              </label> */}
-              <input
-                type="file"
-                accept=".csv"
-                className="load-flex-upload"
-                onChange={handleFileUpload}
-              />
-              {/* <div className="load-flex-btn" onClick={onButtonClick}>
-                Cargar
-              </div> */}
-              <div className="load-flex-btn" onClick={makeRequest}>
-                Enviar
+                <div className="load-flex-btn" onClick={makeRequest}>
+                  Enviar
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="load-loader">
+              <div>Cargando...</div>
+            </div>
+          )}
         </div>
       </div>
       <Footer />

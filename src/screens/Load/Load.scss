@@ -54,4 +54,18 @@
       color: #ec3161;
     }
   }
+
+  &-loader {
+    background-color: white;
+    border: 1px solid #e3e7ea;
+    border-radius: 4px;
+    width: 35.2rem;
+    height: 12.2rem;
+    color: #ec3161;
+    font-size: 35px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+  }
 }
