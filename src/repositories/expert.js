@@ -53,7 +53,7 @@ const getFirstExpertsByLikes = async () => {
 const postExpertsBulk = async (array) => {
   const response = await axios.post(
     process.env.REACT_APP_API_URL + `/experts_bulk`,
-    { array }
+    array
   );
   return response.data;
 };
