@@ -1,15 +1,21 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { ProductRepository } from '../../repositories';
-import { AffiliationsCard } from '..';
+import { AffiliationsCard, InformationCard } from '..';
+import { AiOutlineClose } from 'react-icons/ai';
 import './product-information.scss';
-import product from '../../repositories/product';
-const ProductInformation = ({ productInformation }) => {
+
+export const ProductInformation = ({
+  productInformation,
+  setProductInformation,
+}) => {
   const [productContributors, setProductContributors] = useState({});
   const [loading, setLoading] = useState(true);
+  const [areasSubjects, setAreasSubjects] = useState({});
+  const [linesSubjects, setLinesSubjects] = useState({});
+  const [themeSubjects, setThemeSubjects] = useState({});
 
   const fetchProductContributors = useCallback(async () => {
     console.log(productInformation);
-
     const response = await ProductRepository.getProductContributors(
       productInformation?.pro_id
     );
@@ -19,18 +25,55 @@ const ProductInformation = ({ productInformation }) => {
       }
     );
     setProductContributors(data);
-  }, [setProductContributors]);
+  }, [setProductContributors, productInformation]);
 
+  const fetchProductSubjects = useCallback(async () => {
+    const areas = await ProductRepository.getProductSubjects(
+      productInformation.pro_id,
+      1
+    );
+    const lines = await ProductRepository.getProductSubjects(
+      productInformation.pro_id,
+      2
+    );
+    const themes = await ProductRepository.getProductSubjects(
+      productInformation.pro_id,
+      3
+    );
+    setAreasSubjects(areas);
+    setLinesSubjects(lines);
+    setThemeSubjects(themes);
+  }, [
+    setAreasSubjects,
+    setLinesSubjects,
+    setThemeSubjects,
+    productInformation,
+  ]);
+  const deleteProductInformation = () => {
+    setProductInformation(null);
+  };
   useEffect(async () => {
     await fetchProductContributors();
+    await fetchProductSubjects();
     setLoading(false);
-  }, [fetchProductContributors]);
+    return () => console.log('unmounting...');
+  }, [fetchProductContributors, fetchProductSubjects]);
   return (
     <div className="product-information">
       {loading ? null : (
         <div>
-          <div className="product-information__title">
-            {productInformation.title.toUpperCase()}
+          <div className="product-information__header">
+            <div className="product-information__header__title">
+              {productInformation.title.toUpperCase()}
+            </div>
+
+            <div>
+              <AiOutlineClose
+                size={20}
+                onClick={() => deleteProductInformation()}
+                className="cursor-pointer"
+              />
+            </div>
           </div>
           <h6 className="product-information__resume_title">RESUMEN:</h6>
           <div className="product-information__resume_info">
@@ -140,12 +183,44 @@ const ProductInformation = ({ productInformation }) => {
                 <div>{productInformation.pro_id}</div>
               </div>
             </div>
-            <div className="col-6">asd</div>
+            <div className="col-6">
+              <div>
+                <span className="bold">ÁREAS DE ACTUACIÓN</span>
+                <div className="row">
+                  {areasSubjects.map((subject) => (
+                    <InformationCard
+                      key={subject?.id}
+                      tittle={subject.subject.name}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div>
+                <span className="bold">LÍNEAS DE INVESTIGACIÓN</span>
+                <div className="row">
+                  {linesSubjects.map((subject) => (
+                    <InformationCard
+                      key={subject?.id}
+                      tittle={subject.subject.name}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div>
+                <span className="bold">TEMAS ASOCIADOS</span>
+                <div className="row">
+                  {themeSubjects.map((subject) => (
+                    <InformationCard
+                      key={subject?.id}
+                      tittle={subject.subject.name}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
     </div>
   );
 };
-
-export default ProductInformation;

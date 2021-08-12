@@ -57,7 +57,13 @@ const postExpertsBulk = async (array) => {
   );
   return response.data;
 };
-
+const postExpertSocialNetworksBulk = async (array) => {
+  const response = await axios.post(
+    process.env.REACT_APP_API_URL + `/experts-social-network-bulk`,
+    array
+  );
+  return response.data;
+};
 export default {
   getFirstExpertsByLikes,
   getExpertById,
@@ -68,4 +74,5 @@ export default {
   getExpertExperienceById,
   getExpertProductsById,
   postExpertsBulk,
+  postExpertSocialNetworksBulk,
 };

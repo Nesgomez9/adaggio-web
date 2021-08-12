@@ -11,7 +11,15 @@ const getProductContributors = async (id) => {
     )
   ).data;
 };
+const getProductSubjects = async (id, type) => {
+  return (
+    await axios.get(
+      process.env.REACT_APP_API_URL + `/products/${id}/subjects/${type}`
+    )
+  ).data;
+};
 export default {
   getProductTypes,
   getProductContributors,
+  getProductSubjects,
 };

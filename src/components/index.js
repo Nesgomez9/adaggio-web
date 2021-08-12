@@ -26,7 +26,8 @@ import { Affiliations } from './Affiliations/Affiliations';
 import { AffiliationsCard } from './Affiliations-card/Affiliations-card';
 import { ProductsOrganization } from './Organization-menus/Products-Organization/Products-organization';
 import { ProductsOrg } from './Products-organization-component/Products';
-import ProductInformation from './Product-Information/Product-Information';
+import { ProductInformation } from './Product-Information/Product-Information';
+import { ProductImage } from './Product-Image/Product-Image';
 export {
   NavBar,
   Footer,
@@ -57,4 +58,5 @@ export {
   ProductsOrganization,
   ProductsOrg,
   ProductInformation,
+  ProductImage,
 };

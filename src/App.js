@@ -24,6 +24,7 @@ function App() {
         <Route exact path="/search-expert" component={SearchEx} />
         <Route exact path="/search-organizations" component={Orgs} />
         <Route exact path="/organizations/:id" component={Organization} />
+        <Route exact path="/experts/:expertId" component={Expert} />
         <Route exact path="/load" component={Load} />
       </Switch>
     </Router>

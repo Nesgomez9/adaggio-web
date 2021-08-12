@@ -1,0 +1,15 @@
+.product-image {
+  background-color: white;
+  padding: 40px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(235, 235, 235);
+  &__type {
+    color: #ec3161;
+  }
+  &__cover-page {
+    width: 200px;
+  }
+  &__line {
+    border-bottom: 1px solid black;
+  }
+}

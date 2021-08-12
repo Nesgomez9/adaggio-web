@@ -90,39 +90,41 @@ export const Home = () => {
                 </div>
 
                 <div className="row expert-carrousel-cards">
-                  {experts.map((expert) => (
-                    <div className="expert-card" key={expert.id}>
-                      <div>
-                        {expert.image_url ? (
-                          <img
-                            alt="Expert Profile"
-                            src={expert.image_url}
-                            className="img-expert-card"
-                          />
-                        ) : (
-                          <img
-                            alt="Expert Profile not defined"
-                            src={BlackMarkIcon}
-                            className="img-expert-card"
-                          />
-                        )}
+                  {experts &&
+                    experts.map((expert) => (
+                      <div className="expert-card" key={expert.id}>
+                        <div>
+                          {expert.image_url ? (
+                            <img
+                              alt="Expert Profile"
+                              src={expert.image_url}
+                              className="img-expert-card"
+                            />
+                          ) : (
+                            <img
+                              alt="Expert Profile not defined"
+                              src={BlackMarkIcon}
+                              className="img-expert-card"
+                            />
+                          )}
+                        </div>
+                        <div>
+                          <h6>
+                            {expert.last_name}, {expert.name}
+                          </h6>
+                          <span>
+                            {expert.organization
+                              ? `${expert.organization.name}`
+                              : null}
+                            <br />
+                            {expert.organization &&
+                            expert.organization.short_name
+                              ? `:${expert.organization.short_name}`
+                              : null}
+                          </span>
+                        </div>
                       </div>
-                      <div>
-                        <h6>
-                          {expert.last_name}, {expert.name}
-                        </h6>
-                        <span>
-                          {expert.organization
-                            ? `${expert.organization.name}`
-                            : null}
-                          <br />
-                          {expert.organization && expert.organization.short_name
-                            ? `:${expert.organization.short_name}`
-                            : null}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
             </Row>
@@ -136,7 +138,7 @@ export const Home = () => {
                   <h5 className="mr-3 mt-3 color-red bold">Ver más</h5>
                 </div>
                 <div className="universities-grid">
-                  {organizations.map((organization) => (
+                  {organizations?.map((organization) => (
                     <div
                       className="university cursor-pointer"
                       onClick={() => routeChange(organization.org_id)}
