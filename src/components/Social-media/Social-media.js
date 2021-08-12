@@ -11,7 +11,7 @@ export const SocialMedia = ({ networks }) => {
           <Row>
             {networks
               ? networks.map((network) => (
-                  <div className="mr-4 ml-3 mb-4">
+                  <div className="mr-4 ml-3 mb-4 networks">
                     <img
                       alt="Social Networks"
                       src={network.social_network.image_url}
