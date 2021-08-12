@@ -4,6 +4,7 @@ import { Footer, NavBar } from '../../components';
 import { Form } from 'react-bootstrap';
 import './Load.scss';
 import { ExpertRepository } from '../../repositories';
+import { RiContactsBookUploadFill } from 'react-icons/ri';
 export const Load = () => {
   const [csvArray, setCsvArray] = useState([]);
   const [sendState, setSendState] = useState(false);
