@@ -26,9 +26,12 @@ export const Contact = ({
             <BiWorld size={40} className="mr-3" />
             <span> {country}</span>
           </div>
-          <div className="mb-4">
-            <BiEnvelope size={40} className="mr-3" /> {email}
-          </div>
+          {email ? (
+            <div className="mb-4">
+              <BiEnvelope size={40} className="mr-3" /> {email}
+            </div>
+          ) : null}
+
           {phone ? (
             <div className="mb-4">
               <BiPhone size={40} className="mr-3" /> (+57) {phone}

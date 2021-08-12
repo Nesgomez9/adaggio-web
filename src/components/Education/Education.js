@@ -15,9 +15,11 @@ export const Education = ({ tittle, educations }) => {
       </Row>
       <hr />
       <Row className="">
-        {educations.map((education) => (
-          <EducationCard key={education?.id} education={education} />
-        ))}
+        {educations
+          ? educations.map((education) => (
+              <EducationCard key={education?.id} education={education} />
+            ))
+          : null}
       </Row>
 
       <p className="color-red bold see-more mt-4 "> Ver Más</p>

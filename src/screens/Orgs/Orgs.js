@@ -287,7 +287,7 @@ export const Orgs = () => {
         <div className="featured__blue"></div>
         <div className="featured__first">
           <h2>
-            Organizaciones con mayor cantidad de artículosindexados en las
+            Organizaciones con mayor cantidad de artículos indexados en las
             mejores revistas del mundo &#62; FUENTE COMBINADA: SJR + PUBLINDEX
           </h2>
           <div className="featured__first-list">

@@ -15,11 +15,11 @@ import { OrganizationRepository } from '../../repositories';
 import './Organization.scss';
 
 export const Organization = () => {
-  let { id } = useParams();
+  const { id: userId } = useParams();
+  const [id, setId] = useState(userId);
   const [loading, setLoading] = useState(true);
   const [menus, setMenus] = useState([true, false, false, false, false, false]);
   const [organizationData, setOrganizationData] = useState({});
-
   const fetchOrganization = async () => {
     const response = await OrganizationRepository.getOrganizationById(id);
     setOrganizationData(response);
@@ -34,9 +34,14 @@ export const Organization = () => {
     await fetchOrganization();
     setLoading(false);
   };
-  useEffect(() => {
-    fetch();
-  }, []);
+  useEffect(async () => {
+    await setLoading(true);
+    await setId(userId);
+  }, [userId]);
+
+  useEffect(async () => {
+    await fetch();
+  }, [id]);
   return (
     <>
       {loading ? (

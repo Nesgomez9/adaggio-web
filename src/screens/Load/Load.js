@@ -1,12 +1,25 @@
-import React, { useState, useRef } from 'react';
-import Axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import { Footer, NavBar } from '../../components';
 import { Form } from 'react-bootstrap';
 import './Load.scss';
 import { ExpertRepository } from '../../repositories';
 export const Load = () => {
   const [csvArray, setCsvArray] = useState([]);
-  const [sendState, setSendState] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [radioValue, setRadioValue] = useState([
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const changRadioValue = (radioId) => {
+    const tmpRadioValues = [false, false, false, false, false, false];
+    tmpRadioValues[radioId] = true;
+    setRadioValue(tmpRadioValues);
+  };
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -42,15 +55,24 @@ export const Load = () => {
 
   const makeRequest = async () => {
     try {
-      setSendState(true);
-      const response = await ExpertRepository.postExpertsBulk(csvArray);
-      setSendState(false);
+      setLoading(true);
+      let response = null;
+      if (radioValue[0]) {
+        response = await ExpertRepository.postExpertsBulk(csvArray);
+      } else if (radioValue[4]) {
+        response = await ExpertRepository.postExpertSocialNetworksBulk(
+          csvArray
+        );
+      }
       console.log(response);
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
-
+  useEffect(() => {
+    console.log(radioValue);
+  }, [radioValue]);
   return (
     <>
       <NavBar />
@@ -59,17 +81,56 @@ export const Load = () => {
           <div className="load-title">Cargar Datos</div>
         </div>
         <div className="load-flex">
-          {!sendState ? (
+          {!loading ? (
             <div className="load-form">
               <Form>
-                <Form.Check type="radio" label="Expertos" name="group1" />
-                <Form.Check type="radio" label="Organizaciones" name="group1" />
-                <Form.Check type="radio" label="Productos" name="group1" />
-                <Form.Check type="radio" label="Temas" name="group1" />
+                <Form.Check
+                  type="radio"
+                  label="Expertos"
+                  name="group1"
+                  checked={radioValue[0]}
+                  value={radioValue[0]}
+                  onChange={(e) => changRadioValue(0)}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Organizaciones"
+                  name="group1"
+                  checked={radioValue[1]}
+                  value={radioValue[1]}
+                  onChange={(e) => changRadioValue(1)}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Productos"
+                  name="group1"
+                  checked={radioValue[2]}
+                  value={radioValue[2]}
+                  onChange={(e) => changRadioValue(2)}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Temas"
+                  name="group1"
+                  checked={radioValue[3]}
+                  value={radioValue[3]}
+                  onChange={(e) => changRadioValue(3)}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Redes sociales expertos"
+                  name="group1"
+                  checked={radioValue[4]}
+                  value={radioValue[4]}
+                  onChange={(e) => changRadioValue(4)}
+                />
                 <Form.Check
                   type="radio"
                   label="Macro-Productos"
                   name="group1"
+                  checked={radioValue[5]}
+                  value={radioValue[5]}
+                  onChange={(e) => changRadioValue(5)}
                 />
               </Form>
               <div className="load-flex">
