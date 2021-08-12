@@ -5,7 +5,7 @@ import './Load.scss';
 import { ExpertRepository } from '../../repositories';
 
 export const Load = () => {
-  const [csvArray, setCsvArray] = useState([]);
+  const [bigArray, setBigArray] = useState([[]]);
   const [loading, setLoading] = useState(false);
   const [radioValue, setRadioValue] = useState([
     true,
@@ -48,8 +48,18 @@ export const Load = () => {
         }, {});
         return eachObject;
       });
-      setCsvArray(newArray);
-      console.log(newArray);
+      let arrayPart = [];
+      let copyArray = [...newArray];
+      let arrArray = [];
+      while (copyArray.length > 0) {
+        arrayPart = copyArray.slice(0, 50);
+        arrArray = [...arrArray, arrayPart];
+        console.log(arrArray);
+        copyArray.splice(0, 50);
+        console.log(copyArray);
+      }
+      setBigArray(arrArray);
+      console.log('Aqui', bigArray);
     };
     reader.readAsText(file);
   };
@@ -59,10 +69,10 @@ export const Load = () => {
       setLoading(true);
       let response = null;
       if (radioValue[0]) {
-        response = await ExpertRepository.postExpertsBulk(csvArray);
+        response = await ExpertRepository.postExpertsBulk(bigArray);
       } else if (radioValue[4]) {
         response = await ExpertRepository.postExpertSocialNetworksBulk(
-          csvArray
+          bigArray
         );
       }
       console.log(response);
