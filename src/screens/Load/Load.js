@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Footer, NavBar } from '../../components';
 import { Form } from 'react-bootstrap';
 import './Load.scss';
-import { ExpertRepository } from '../../repositories';
+import { ExpertRepository, OrganizationRepository } from '../../repositories';
 
 export const Load = () => {
-  const [bigArray, setBigArray] = useState([[]]);
+  const [bigArray, setBigArray] = useState([]);
   const [loading, setLoading] = useState(false);
   const [radioValue, setRadioValue] = useState([
     true,
@@ -74,6 +74,8 @@ export const Load = () => {
         response = await ExpertRepository.postExpertSocialNetworksBulk(
           bigArray
         );
+      } else if (radioValue[1]) {
+        response = await OrganizationRepository.postOrganizationsBulk(bigArray);
       }
       console.log(response);
       setLoading(false);

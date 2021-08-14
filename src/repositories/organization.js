@@ -59,6 +59,13 @@ const getSimilaryOrganizationsByType = async (type) => {
     )
   ).data;
 };
+const postOrganizationsBulk = async (array) => {
+  const response = await axios.post(
+    process.env.REACT_APP_API_URL + `/organizations-bulk`,
+    array
+  );
+  return response.data;
+};
 export default {
   getFirstOrganizationsByLikes,
   getOrganizationById,
@@ -69,4 +76,5 @@ export default {
   getSimilaryOrganizationsByType,
   getEducationInOrganization,
   getProductsInOrganization,
+  postOrganizationsBulk,
 };
