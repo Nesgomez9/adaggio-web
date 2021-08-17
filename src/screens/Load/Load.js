@@ -30,7 +30,7 @@ export const Load = () => {
       const headers = text.slice(0, text.indexOf('\r')).split(',');
       const rows = text.slice(text.indexOf('\n') + 1).split('\r\n');
       const newArray = rows.map((row) => {
-        const values = row.split(',');
+        const values = row.split(/,(?! )/);
         const eachObject = headers.reduce((obj, header, i) => {
           if (values[i] === '') {
             values[i] = null;
@@ -56,8 +56,8 @@ export const Load = () => {
         arrArray = [...arrArray, arrayPart];
         copyArray.splice(0, 50);
       }
+      console.log(arrArray);
       setBigArray(arrArray);
-      // setBigArray(newArray);
     };
     reader.readAsText(file);
   };
@@ -66,15 +66,17 @@ export const Load = () => {
     try {
       setLoading(true);
       let response = null;
-      bigArray.forEach(async (arr) => {
+      for (let i = 0; i < bigArray.length; i++) {
         if (radioValue[0]) {
-          response = await ExpertRepository.postExpertsBulk(arr);
+          response = await ExpertRepository.postExpertsBulk(bigArray[i]);
         } else if (radioValue[4]) {
-          response = await ExpertRepository.postExpertSocialNetworksBulk(arr);
+          response = await ExpertRepository.postExpertSocialNetworksBulk(
+            bigArray[i]
+          );
         }
         console.log(response);
         setLoading(false);
-      });
+      }
     } catch (error) {
       console.log(error);
     }
