@@ -18,8 +18,16 @@ const getProductSubjects = async (id, type) => {
     )
   ).data;
 };
+const postProductsBulk = async (array) => {
+  const response = await axios.post(
+    process.env.REACT_APP_API_URL + `/products_bulk`,
+    array
+  );
+  return response.data;
+};
 export default {
   getProductTypes,
   getProductContributors,
   getProductSubjects,
+  postProductsBulk,
 };

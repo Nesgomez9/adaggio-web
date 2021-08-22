@@ -3,6 +3,7 @@ import { Footer, NavBar } from '../../components';
 import { Form } from 'react-bootstrap';
 import './Load.scss';
 import { ExpertRepository } from '../../repositories';
+import { ProductRepository } from '../../repositories';
 import { RiContactsBookUploadFill } from 'react-icons/ri';
 export const Load = () => {
   const [bigArray, setBigArray] = useState([[]]);
@@ -69,6 +70,8 @@ export const Load = () => {
       for (let i = 0; i < bigArray.length; i++) {
         if (radioValue[0]) {
           response = await ExpertRepository.postExpertsBulk(bigArray[i]);
+        } else if (radioValue[2]) {
+          response = await ProductRepository.postProductsBulk(bigArray[i]);
         } else if (radioValue[4]) {
           response = await ExpertRepository.postExpertSocialNetworksBulk(
             bigArray[i]
