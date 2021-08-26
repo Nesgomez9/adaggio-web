@@ -79,33 +79,38 @@ export const Expert = (data) => {
         <>
           <NavBar />
           <div className="profile">
-            {expertData.image_url ? (
-              <img
-                alt="Expert Profile"
-                src={expertData.image_url}
-                className="profile-picture"
-              />
-            ) : (
-              <img
-                alt="Expert Profile not defined"
-                src={BlackMarkIcon}
-                className="profile-picture"
-              />
-            )}
-
-            <p className="profile-name">
-              <span className="name">
-                {expertData.last_name}, {expertData.name}
-              </span>
-              <br />
-              <br />
-              <span>{expertData.resume ? expertData.resume : null}</span>
-              <br />
-              <br />
-              <span className="color-red bold">
-                INVESTIGADOR ASOCIADO, MINCIENCIAS
-              </span>
-            </p>
+            <div className="biography">
+              <div className="profile-imgage-container">
+                {expertData.image_url ? (
+                  <img
+                    alt="Expert Profile"
+                    src={expertData.image_url}
+                    className="profile-picture"
+                  />
+                ) : (
+                  <img
+                    alt="Expert Profile not defined"
+                    src={BlackMarkIcon}
+                    className="profile-picture"
+                  />
+                )}
+              </div>
+              <div>
+                <p className="profile-name">
+                  <span className="name">
+                    {expertData.last_name}, {expertData.name}
+                  </span>
+                  <br />
+                  <br />
+                  <span>{expertData.resume ? expertData.resume : null}</span>
+                  <br />
+                  <br />
+                  <span className="color-red bold">
+                    INVESTIGADOR ASOCIADO, MINCIENCIAS
+                  </span>
+                </p>
+              </div>
+            </div>
 
             <div className="social-interactions">
               <div>

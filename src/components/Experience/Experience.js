@@ -8,9 +8,10 @@ export const Experience = ({ educations, tittle }) => {
       <h5 className="bold">{tittle}</h5>
       <hr />
       <Row className="">
-        {educations?.map((education) => (
-          <ExperienceCard education={education} />
-        ))}
+        {educations &&
+          educations?.map((education) => (
+            <ExperienceCard education={education} />
+          ))}
       </Row>
     </div>
   );

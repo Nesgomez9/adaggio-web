@@ -78,7 +78,7 @@ export const Organization = () => {
 
             <div className="social-interactions">
               <div>
-                {organizationData.likes}{' '}
+                {organizationData.likes}
                 <BiLike size={40} className="color-white" />
               </div>
               <div>

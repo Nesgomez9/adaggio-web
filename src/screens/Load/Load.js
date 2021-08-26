@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Footer, NavBar } from '../../components';
 import { Form } from 'react-bootstrap';
 import './Load.scss';
-import { ExpertRepository, OrganizationRepository } from '../../repositories';
+import {
+  ExpertRepository,
+  OrganizationRepository,
+  SubjectsRepository,
+} from '../../repositories';
 
 export const Load = () => {
   const [bigArray, setBigArray] = useState([]);
@@ -14,10 +18,24 @@ export const Load = () => {
     false,
     false,
     false,
+    false,
+    false,
+    false,
+    false,
   ]);
 
   const changRadioValue = (radioId) => {
-    const tmpRadioValues = [false, false, false, false, false, false];
+    const tmpRadioValues = [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+    ];
     tmpRadioValues[radioId] = true;
     setRadioValue(tmpRadioValues);
   };
@@ -54,12 +72,10 @@ export const Load = () => {
       while (copyArray.length > 0) {
         arrayPart = copyArray.slice(0, 50);
         arrArray = [...arrArray, arrayPart];
-        console.log(arrArray);
         copyArray.splice(0, 50);
-        console.log(copyArray);
       }
       setBigArray(arrArray);
-      console.log('Aqui', bigArray);
+      // setBigArray(newArray);
     };
     reader.readAsText(file);
   };
@@ -68,16 +84,24 @@ export const Load = () => {
     try {
       setLoading(true);
       let response = null;
-      if (radioValue[0]) {
-        response = await ExpertRepository.postExpertsBulk(bigArray);
-      } else if (radioValue[4]) {
-        response = await ExpertRepository.postExpertSocialNetworksBulk(
-          bigArray
-        );
-      } else if (radioValue[1]) {
-        response = await OrganizationRepository.postOrganizationsBulk(bigArray);
+      for (const arr of bigArray) {
+        if (radioValue[0]) {
+          response = await ExpertRepository.postExpertsBulk(arr);
+        } else if (radioValue[4]) {
+          response = await ExpertRepository.postExpertSocialNetworksBulk(arr);
+        } else if (radioValue[1]) {
+          response = await OrganizationRepository.postOrganizationsBulk(arr);
+        } else if (radioValue[6]) {
+          response = await SubjectsRepository.postSubjectsBulk(arr);
+        } else if (radioValue[7]) {
+          response = await SubjectsRepository.postProgramsBulk(arr);
+        } else if (radioValue[8]) {
+          response = await ExpertRepository.postExpertEducationsBulk(arr);
+        } else if (radioValue[9]) {
+          response = await ExpertRepository.postExpertExperienceBulk(arr);
+        }
+        console.log(response);
       }
-      console.log(response);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -85,7 +109,8 @@ export const Load = () => {
   };
   useEffect(() => {
     console.log(radioValue);
-  }, [radioValue]);
+    console.log(bigArray);
+  }, [radioValue, bigArray]);
   return (
     <>
       <NavBar />
@@ -123,14 +148,6 @@ export const Load = () => {
                 />
                 <Form.Check
                   type="radio"
-                  label="Temas"
-                  name="group1"
-                  checked={radioValue[3]}
-                  value={radioValue[3]}
-                  onChange={(e) => changRadioValue(3)}
-                />
-                <Form.Check
-                  type="radio"
                   label="Redes sociales expertos"
                   name="group1"
                   checked={radioValue[4]}
@@ -144,6 +161,38 @@ export const Load = () => {
                   checked={radioValue[5]}
                   value={radioValue[5]}
                   onChange={(e) => changRadioValue(5)}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Subjects"
+                  name="group1"
+                  checked={radioValue[6]}
+                  value={radioValue[6]}
+                  onChange={(e) => changRadioValue(6)}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Programs"
+                  name="group1"
+                  checked={radioValue[7]}
+                  value={radioValue[7]}
+                  onChange={(e) => changRadioValue(7)}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Expert Educations"
+                  name="group1"
+                  checked={radioValue[8]}
+                  value={radioValue[8]}
+                  onChange={(e) => changRadioValue(8)}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Expert Experience"
+                  name="group1"
+                  checked={radioValue[9]}
+                  value={radioValue[9]}
+                  onChange={(e) => changRadioValue(9)}
                 />
               </Form>
               <div className="load-flex">

@@ -36,7 +36,12 @@ export const SimilaryOrganizations = ({ tittle, organizations }) => {
               </div>
               <span>
                 {organization.name} <br />
-                {organization.short_name ? organization.short_name : null}
+                {organization.short_name ? (
+                  <div>
+                    {organization.short_name}
+                    <br />
+                  </div>
+                ) : null}
                 <span className="color-red">
                   {organization.country.nicename
                     ? organization.country.nicename

@@ -18,11 +18,11 @@ export const AffiliationsOrganization = ({ organizationData }) => {
     const response = await OrganizationRepository.getEducationInOrganization(
       organizationData.org_id
     );
-    const data = Array.from(new Set(response.map((a) => a.expert.id))).map(
-      (id) => {
-        return response.find((a) => a.expert.id === id);
-      }
-    );
+    const data = Array.from(
+      new Set(response && response.map((a) => a.expert.id))
+    ).map((id) => {
+      return response.find((a) => a.expert.id === id);
+    });
     setEducations(data);
   };
 

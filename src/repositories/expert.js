@@ -64,6 +64,20 @@ const postExpertSocialNetworksBulk = async (array) => {
   );
   return response.data;
 };
+const postExpertEducationsBulk = async (array) => {
+  const response = await axios.post(
+    process.env.REACT_APP_API_URL + `/experts-educations-bulk`,
+    array
+  );
+  return response.data;
+};
+const postExpertExperienceBulk = async (array) => {
+  const response = await axios.post(
+    process.env.REACT_APP_API_URL + `/experts-experience-bulk`,
+    array
+  );
+  return response.data;
+};
 export default {
   getFirstExpertsByLikes,
   getExpertById,
@@ -75,4 +89,6 @@ export default {
   getExpertProductsById,
   postExpertsBulk,
   postExpertSocialNetworksBulk,
+  postExpertEducationsBulk,
+  postExpertExperienceBulk,
 };
