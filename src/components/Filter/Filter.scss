@@ -1,9 +1,11 @@
 .main__filters {
   &-btn {
     display: flex;
+    max-height: 200px;
+
     justify-content: space-between;
     width: 95%;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
     margin-top: 30px;
     cursor: pointer;
@@ -12,8 +14,8 @@
   &-container {
     width: 95%;
     display: flex;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
     color: #ec3161;
     margin-top: 20px;
 
@@ -26,6 +28,9 @@
   &-filter {
     width: 100%;
     display: flex;
-    justify-content: space-between;
   }
+}
+.filter {
+  max-height: 400px;
+  overflow: auto;
 }

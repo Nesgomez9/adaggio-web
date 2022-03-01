@@ -21,4 +21,7 @@ const postProgramsBulk = async (array) => {
     console.log(error);
   }
 };
-export default { postSubjectsBulk, postProgramsBulk };
+const getSubjects = async () => {
+  return (await axios.get(process.env.REACT_APP_API_URL + `/subjects`)).data;
+};
+export default { postSubjectsBulk, postProgramsBulk, getSubjects };

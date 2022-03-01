@@ -78,6 +78,31 @@ const postExpertExperienceBulk = async (array) => {
   );
   return response.data;
 };
+const postExpertSubjectsBulk = async (array) => {
+  const response = await axios.post(
+    process.env.REACT_APP_API_URL + `/experts-subjects-bulk`,
+    array
+  );
+  return response.data;
+};
+const getExpertsAwardsTypes = async () => {
+  const response = await axios.get(
+    process.env.REACT_APP_API_URL + `/expert_score_types`
+  );
+  return response.data;
+};
+const getExpertsTypes = async () => {
+  const response = await axios.get(
+    process.env.REACT_APP_API_URL + `/expert_types`
+  );
+  return response.data;
+};
+const getCountries = async () => {
+  const response = await axios.get(
+    process.env.REACT_APP_API_URL + `/countries`
+  );
+  return response.data;
+};
 export default {
   getFirstExpertsByLikes,
   getExpertById,
@@ -91,4 +116,8 @@ export default {
   postExpertSocialNetworksBulk,
   postExpertEducationsBulk,
   postExpertExperienceBulk,
+  postExpertSubjectsBulk,
+  getExpertsAwardsTypes,
+  getExpertsTypes,
+  getCountries,
 };

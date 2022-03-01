@@ -12,4 +12,13 @@
   &__line {
     border-bottom: 1px solid black;
   }
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    &-link {
+      color: #ef6184;
+      text-decoration: underline;
+      text-decoration-color: #ef6184;
+    }
+  }
 }

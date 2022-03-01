@@ -8,7 +8,7 @@ export const ProductInformation = ({
   productInformation,
   setProductInformation,
 }) => {
-  const [productContributors, setProductContributors] = useState({});
+  const [productContributors, setProductContributors] = useState(null);
   const [loading, setLoading] = useState(true);
   const [areasSubjects, setAreasSubjects] = useState({});
   const [linesSubjects, setLinesSubjects] = useState({});
@@ -19,12 +19,8 @@ export const ProductInformation = ({
     const response = await ProductRepository.getProductContributors(
       productInformation?.pro_id
     );
-    const data = Array.from(new Set(response.map((a) => a.expert.id))).map(
-      (id) => {
-        return response.find((a) => a.expert.id === id);
-      }
-    );
-    setProductContributors(data);
+
+    setProductContributors(response);
   }, [setProductContributors, productInformation]);
 
   const fetchProductSubjects = useCallback(async () => {
@@ -81,11 +77,12 @@ export const ProductInformation = ({
           </div>
           <h6 className="product-information__resume_title">AUTOR(ES):</h6>
           <div className="row">
-            {productContributors?.map((object) => (
-              <div className="col-6">
-                <AffiliationsCard object={object} />
-              </div>
-            ))}
+            {productContributors &&
+              productContributors.map((object) => (
+                <div className="col-6">
+                  <AffiliationsCard object={object} />
+                </div>
+              ))}
           </div>
           <div className="row mt-4">
             <div className="col-6">
@@ -95,7 +92,7 @@ export const ProductInformation = ({
                 </div>
                 <div>
                   <div className="product-information__details-link cursor-pointer">
-                    {productInformation.editor.name}
+                    {productInformation.editor?.name}
                   </div>
                 </div>
               </div>
@@ -114,7 +111,7 @@ export const ProductInformation = ({
 
                 <div>
                   <div className="product-information__details-link cursor-pointer">
-                    {productInformation.publisher.name}
+                    {productInformation.publisher?.name}
                   </div>
                 </div>
               </div>
@@ -187,34 +184,37 @@ export const ProductInformation = ({
               <div>
                 <span className="bold">ÁREAS DE ACTUACIÓN</span>
                 <div className="row">
-                  {areasSubjects.map((subject) => (
-                    <InformationCard
-                      key={subject?.id}
-                      tittle={subject.subject.name}
-                    />
-                  ))}
+                  {areasSubjects &&
+                    areasSubjects.map((subject) => (
+                      <InformationCard
+                        key={subject?.id}
+                        tittle={subject.subject?.name}
+                      />
+                    ))}
                 </div>
               </div>
               <div>
                 <span className="bold">LÍNEAS DE INVESTIGACIÓN</span>
                 <div className="row">
-                  {linesSubjects.map((subject) => (
-                    <InformationCard
-                      key={subject?.id}
-                      tittle={subject.subject.name}
-                    />
-                  ))}
+                  {linesSubjects &&
+                    linesSubjects.map((subject) => (
+                      <InformationCard
+                        key={subject?.id}
+                        tittle={subject.subject.name}
+                      />
+                    ))}
                 </div>
               </div>
               <div>
                 <span className="bold">TEMAS ASOCIADOS</span>
                 <div className="row">
-                  {themeSubjects.map((subject) => (
-                    <InformationCard
-                      key={subject?.id}
-                      tittle={subject.subject.name}
-                    />
-                  ))}
+                  {themeSubjects &&
+                    themeSubjects.map((subject) => (
+                      <InformationCard
+                        key={subject?.id}
+                        tittle={subject.subject.name}
+                      />
+                    ))}
                 </div>
               </div>
             </div>

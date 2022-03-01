@@ -5,10 +5,18 @@ export const ProductCard = ({ product, setProductInformation }) => {
   console.log(product);
   return (
     <div className="product">
-      <div onClick={() => setProductInformation(product)}>
-        <span className="title cursor-pointer">{product.title}</span>
+      <div>
+        <div>
+          <span
+            className="title cursor-pointer"
+            onClick={() => setProductInformation(product)}
+          >
+            {product.title}
+          </span>
+        </div>
+
         <div className="options">
-          <div className="option ml-5">Comentarios</div>
+          <div className="option ">Comentarios</div>
           <div className="option">Compartir</div>
           <div className="option">Citar</div>
           <div className="option">Detalle</div>

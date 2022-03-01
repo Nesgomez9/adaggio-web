@@ -24,6 +24,7 @@ export const Home = () => {
   const [loading, setLoading] = useState(true);
   const fetchExperts = async () => {
     const data = await ExpertRepository.getFirstExpertsByLikes();
+
     setExperts(data);
   };
   const fetchOrganizations = async () => {
@@ -90,7 +91,7 @@ export const Home = () => {
                 </div>
 
                 <div className="row expert-carrousel-cards">
-                  {experts &&
+                  {Object.entries(experts).length != 0 &&
                     experts.map((expert) => (
                       <div className="expert-card" key={expert.id}>
                         <div>
@@ -138,30 +139,33 @@ export const Home = () => {
                   <h5 className="mr-3 mt-3 color-red bold">Ver más</h5>
                 </div>
                 <div className="universities-grid">
-                  {organizations?.map((organization) => (
-                    <div
-                      className="university cursor-pointer"
-                      onClick={() => routeChange(organization.org_id)}
-                    >
-                      <div>
-                        {organization.image_url ? (
-                          <img
-                            alt="Organiaztion Profile"
-                            src={organization.image_url}
-                            className="university-icon"
-                          />
-                        ) : (
-                          <img
-                            alt="Organiaztion Profile not defined"
-                            src={BlackMarkIcon}
-                            className="university-icon"
-                          />
-                        )}
+                  {Object.entries(organizations).length != 0 &&
+                    organizations?.map((organization) => (
+                      <div
+                        className="university cursor-pointer"
+                        onClick={() => routeChange(organization.org_id)}
+                      >
+                        <div>
+                          {organization.image_url ? (
+                            <img
+                              alt="Organiaztion Profile"
+                              src={organization.image_url}
+                              className="university-icon"
+                            />
+                          ) : (
+                            <img
+                              alt="Organiaztion Profile not defined"
+                              src={BlackMarkIcon}
+                              className="university-icon"
+                            />
+                          )}
+                        </div>
+                        {organization.name} <br />
+                        {organization.short_name
+                          ? organization.short_name
+                          : null}
                       </div>
-                      {organization.name} <br />
-                      {organization.short_name ? organization.short_name : null}
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
             </Row>
